@@ -1,6 +1,8 @@
 package com.bu.sirinthorn.butraffic1;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
                 MediaPlayer buttonPlayer = MediaPlayer.create(getBaseContext(), R.raw.cat); //getbase tell android a sound is in the same location of prog
                 buttonPlayer.start();
                 //Intent to WebView
+                //use ctrl + space to guess the method or name
+                Intent objIntent = new Intent(Intent.ACTION_VIEW); //this object inherit from intent class
+                //action view = android open a browser
+                objIntent.setData(Uri.parse("https://sites.google.com/a/bu.ac.th/sirinthorn/home"));
+                startActivity(objIntent);
 
 
             }   //event onclick done
